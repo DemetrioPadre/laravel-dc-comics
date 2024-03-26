@@ -5,7 +5,7 @@
 @section('main-content')
     <section>
         <div class="container py-4">
-            <h1>LARAVEL IS THE BEST </h1>
+            <h1>{{ env('APP_NAME') }}</h1>
         </div>
     </section>
 @endsection
