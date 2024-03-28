@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Pagina iniziale')
+@section('title', 'Lista Fumetti')
 
 @section('main-content')
     <section>
@@ -22,7 +22,7 @@
                         <tr>
                             <td>{{ $comic->id }}</td>
                             <td>{{ $comic->title }}</td>
-                            <td>{{ $comic->price }}€</td>
+                            <td>{{ $comic->get_price() }}</td>
                             <td>{{ $comic->series }}</td>
                             <td>{{ $comic->sale_date }}</td>
                             <td>{{ $comic->type }}</td>
