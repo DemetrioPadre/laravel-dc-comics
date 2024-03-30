@@ -28,7 +28,7 @@
                 </div>
                 <div class="col-3">
                     <label class="form-label" for="sale_date">Data di vendita</label>
-                    <input class="form-control" id="sale_date" type="number" name="sale_date">
+                    <input class="form-control" id="sale_date" type="date" name="sale_date">
                 </div>
                 <div class="col-3">
                     <label for="form-label" for="type">Tipo di Fumetto</label>
