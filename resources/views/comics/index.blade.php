@@ -5,7 +5,10 @@
 @section('main-content')
     <section>
         <div class="container py-4">
-            <h1>Lista dei Fumetti</h1>
+
+            <a class="btn btn-primary mb-2" href="{{ route('comics.create') }}">Aggiungi nuovo Fumetto</a>
+
+            <h1 class="mb-3">Lista dei Fumetti</h1>
             <table class="table">
                 <thead>
                     <tr>

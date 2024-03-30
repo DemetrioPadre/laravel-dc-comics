@@ -5,12 +5,13 @@
 @section('main-content')
     <section>
         <div class="container py-4">
+            <a class="btn btn-primary mb-2" href="{{ route('comics.index') }}">Torna alla lista</a>
             <h1>Crea Nuovo Fumetto</h1>
             <form action="{{ route('comics.store') }}" method="POST" class="row g-3">
                 @csrf
                 <div class="col-3">
                     <label class="form-label" for="name">Titolo</label>
-                    <input class="form-control" id="name" type="text" name="title">
+                    <input class="form-control" id="name" type="text" name="title" required>
                 </div>
 
 
@@ -20,11 +21,11 @@
                 </div>
                 <div class="col-3">
                     <label class="form-label" for="price">Prezzo</label>
-                    <input class="form-control" id="price" type="number" name="price">
+                    <input class="form-control" id="price" type="number" name="price" required>
                 </div>
                 <div class="col-3">
                     <label class="form-label" for="series">serie</label>
-                    <input class="form-control" id="series" type="number" name="series">
+                    <input class="form-control" id="series" type="number" name="series" required>
                 </div>
                 <div class="col-3">
                     <label class="form-label" for="sale_date">Data di vendita</label>
