@@ -14,20 +14,33 @@ class ComicSeeder extends Seeder
      *
      * @return void
      */
-    public function run(Faker $faker)
+    // public function run(Faker $faker)
+    public function run()
+
+
     {
-        for ($i = 0; $i < 50; $i++) {
-            $comic = new Comic;
+        // for ($i = 0; $i < 50; $i++) {
+        //     $comic = new Comic;
 
-            $comic->title = $faker->word();
-            $comic->description = $faker->paragraph(1, true);
-            $comic->thumb = $faker->imageUrl(640, 480, 'demetrio', true);
-            $comic->price = $faker->randomFloat(2, 10, 20);
-            $comic->series = $faker->word();
-            $comic->sale_date = $faker->date();
-            $comic->type = $faker->randomElement(['graphic novel', 'comic book']);
+        //     $comic->title = $faker->word();
+        //     $comic->description = $faker->paragraph(1, true);
+        //     $comic->thumb = $faker->imageUrl(640, 480, 'demetrio', true);
+        //     $comic->price = $faker->randomFloat(2, 10, 20);
+        //     $comic->series = $faker->word();
+        //     $comic->sale_date = $faker->date();
+        //     $comic->type = $faker->randomElement(['graphic novel', 'comic book']);
 
-            $comic->save();
+        //     $comic->save();
+        // }
+
+
+        $comics = config("comics");
+        foreach ($comics as $comic) {
+
+            $new_comic = new Comic;
+
+            $new_comic->fill($comic);
+            $new_comic->save();
         }
     }
 }
