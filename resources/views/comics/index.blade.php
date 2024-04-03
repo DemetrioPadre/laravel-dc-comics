@@ -32,14 +32,46 @@
                             <td><a href="{{ route('comics.show', $comic) }}"><i class="fa-solid fa-eye"></i></a></td>
                             <td><a href="{{ route('comics.edit', $comic) }}"><i class="fa-solid fa-pencil"></i></a></td>
                             <td>
-                                <form action="{{ route('comics.destroy', $comic) }}" method="POST">
-                                    @csrf
-                                    @method('DELETE')
 
-                                    <button class="btn btn-link">
-                                        <i class="fa-solid fa-trash text-danger"></i>
-                                    </button>
-                                </form>
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-link" data-bs-toggle="modal"
+                                    data-bs-target="#delete-comic-{{ $comic->id }}-modal ">
+                                    <i class="fa-solid fa-trash text-danger"></i>
+                                </button>
+                                <!-- Modal -->
+                                <div class="modal fade" id="delete-comic-{{ $comic->id }}-modal" tabindex="-1"
+                                    aria-labelledby="delete-comic-{{ $comic->id }}-modal" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h1 class="modal-title fs-5" id="exampleModalLabel">Elimina Fumetto
+                                                    {{ $comic->title }}</h1>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                Da qui in poi non si torna indietro, sei sicuro di ciò che stai facendo?
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-bs-dismiss="modal">Indietro</button>
+                                                <form action="{{ route('comics.destroy', $comic) }}" method="POST">
+                                                    @csrf
+                                                    @method('DELETE')
+
+                                                    <button class="btn btn-danger">
+                                                        Conferma l'eliminazione
+
+                                                    </button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+
                             </td>
                         </tr>
 
@@ -57,6 +89,9 @@
         </div>
     </section>
 @endsection
+
+{{-- @section('modal')
+@endsection --}}
 
 @section('css')
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"

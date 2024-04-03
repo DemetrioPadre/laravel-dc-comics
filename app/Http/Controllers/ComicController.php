@@ -50,7 +50,7 @@ class ComicController extends Controller
         $comic->fill($data);
         $comic->save();
 
-        return redirect()->route('comics.show', $comic);
+        return redirect()->route('comics.show', $comic)->with('message', 'Fumetto inserito correttamente');
     }
 
     /**
@@ -99,6 +99,6 @@ class ComicController extends Controller
     public function destroy(Comic $comic)
     {
         $comic->delete();
-        return redirect()->route('comic.index');
+        return redirect()->route('comics.index');
     }
 }

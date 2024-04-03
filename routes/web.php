@@ -34,7 +34,7 @@ Route::get('/', function () {
 // Route::patch('/comics/{comic}', [ComicController::class, 'update'])->name('comics.update');
 
 //eliminazione
-Route::delete('/comics/{comic}', [ComicController::class, 'destroy'])->name('comics.destroy');
+// Route::delete('/comics/{comic}', [ComicController::class, 'destroy'])->name('comics.destroy');
 
 
 Route::resource('comics', ComicController::class);
