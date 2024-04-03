@@ -31,6 +31,16 @@
                             <td>{{ $comic->type }}</td>
                             <td><a href="{{ route('comics.show', $comic) }}"><i class="fa-solid fa-eye"></i></a></td>
                             <td><a href="{{ route('comics.edit', $comic) }}"><i class="fa-solid fa-pencil"></i></a></td>
+                            <td>
+                                <form action="{{ route('comics.destroy', $comic) }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+
+                                    <button class="btn btn-link">
+                                        <i class="fa-solid fa-trash text-danger"></i>
+                                    </button>
+                                </form>
+                            </td>
                         </tr>
 
                     @empty
