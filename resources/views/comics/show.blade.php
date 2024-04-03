@@ -8,7 +8,7 @@
     <section>
         <div class="container py-4">
             <a class="btn btn-primary mb-2" href="{{ route('comics.index') }}">Torna alla lista</a>
-            <a class="btn btn-primary mb-2" href="{{ route('comics.edit') }}">Vai alla modifica</a>
+            <a class="btn btn-primary mb-2" href="{{ route('comics.edit', $comic) }}">Vai alla modifica</a>
             <h1>lista prodotti{{ $comic->id }}: {{ $comic->name }}</h1>
             <div class="row">
                 <div class="col-3">

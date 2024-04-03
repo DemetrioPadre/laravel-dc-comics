@@ -6,7 +6,7 @@
     <section>
         <div class="container py-4">
             <a class="btn btn-primary mb-2" href="{{ route('comics.index') }}">Torna alla lista</a>
-            {{-- <a class="btn btn-primary mb-2" href="{{ route('comics.show') }}">Vai al dettaglio</a> --}}
+            <a class="btn btn-primary mb-2" href="{{ route('comics.show', $comic) }}">Vai al dettaglio</a>
 
             <h1>Modifica Fumetto</h1>
             <form action="{{ route('comics.update', ['comic' => $comic->id]) }}" method="POST" class="row g-3">
